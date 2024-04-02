@@ -7,13 +7,14 @@ const userRouter = require('./controller/users');
 const phoneRouter = require('./controller/Phones');
 
 
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use('/api/users', userRouter);
 app.use('/api/login',loginRouter);
-app.use('/api/phone', phoneRouter);
+app.use('/api/phone',phoneRouter);
 
 mongoose.set('strictQuery', false);
 

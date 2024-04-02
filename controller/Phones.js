@@ -5,8 +5,7 @@ const phoneRouter = express.Router();
 const phonecontroller = {
     phone: async (req, res) => {
         try{
-            const {id} = req.params;
-            const phones = await Phone.findById(id)
+            const phones = await Phone.find()
             return res.json(phones);
         }catch(error){
             console.error(error);
@@ -14,5 +13,5 @@ const phonecontroller = {
         }
     },
 }
-phoneRouter.get('/:id', phonecontroller.phone);
+phoneRouter.get('/', phonecontroller.phone);
 module.exports = phoneRouter;
